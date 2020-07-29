@@ -53,7 +53,7 @@ async def _(event):
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
-                f"Set AFK mode to True, and Reason is {reason}"
+                f"**[BOT]** `AFK Mode Enabled\n\n-Tikol4Life`"
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
