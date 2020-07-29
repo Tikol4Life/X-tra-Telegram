@@ -45,9 +45,9 @@ async def _(event):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
         USER_AFK = f"yes: {reason}"  # pylint:disable=E0602
         if reason:
-            await borg.send_message(event.chat_id, f"**[BOT]** `Initializing AFK Mode\n[Reason]` {reason}\n\n`-Tikol4Life`")
+            await borg.send_message(event.chat_id, f"**[BOT]** `AFK Mode Enabled\n[Reason]` {reason}\n\n`-Tikol4Life`")
         else:
-            await borg.send_message(event.chat_id, f"**[BOT]** `Initializing AFK Mode\n\n-Tikol4Life`")
+            await borg.send_message(event.chat_id, f"**[BOT]** `AFK Mode Enabled\n\n-Tikol4Life`")
         await asyncio.sleep(5)
         await event.delete()
         try:
@@ -72,7 +72,7 @@ async def set_not_afk(event):
     total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        shite = await borg.send_message(event.chat_id, "**[BOT]** `Terminating AFK Mode\n\n-Tikol4Life`")
+        shite = await borg.send_message(event.chat_id, "**[BOT]** `AFK Mode Disabled\n\n-Tikol4Life`")
         try:
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
