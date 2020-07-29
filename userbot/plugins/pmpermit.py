@@ -13,8 +13,7 @@ CACHE = {}
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "**No name set yet nibba, check pinned message in** @XtraTgBot"
 USER_BOT_WARN_ZERO = "**[BOT]** `Please dont spam on my inbox or you'll be outrightly blocked`"
-USER_BOT_NO_WARN = (" _____ _ _         _ \n|_   _(_) | _____ | |\n  | | | | |/ / _ \| |\n  | | | |   < (_) | |\n  |_| |_|_|\_\___/|_|\n\n"
-                    "**[BOT]** "
+USER_BOT_NO_WARN = ("**[BOT]** "
                     f"{DEFAULTUSER}` will send a reply to you in a moment\n\n`")
 
 
@@ -66,7 +65,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit(" _____ _ _         _ \n|_   _(_) | _____ | |\n  | | | | |/ / _ \| |\n  | | | |   < (_) | |\n  |_| |_|_|\_\___/|_|\n\n**[BOT]** `You've been blocked by @Tikol4Life`")
+                await event.edit("**[BOT]** `You've been blocked by @Tikol4Life`")
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
